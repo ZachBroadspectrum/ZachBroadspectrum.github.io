@@ -28,13 +28,7 @@
     </style>
 <body>
 
-  <p>Before the script...</p>
-
-  <script src="file.js">
-    
-  </script>
-
-  <p>...After the script.</p>
+  <p>test1</p>
   <button class="button button1">Green</button>
   <input type="button" class="button" id="ButtonInput" value="Input Button">
   <input type="file" name='test' id="testfile" value="Input Button">
@@ -48,12 +42,13 @@
             reader.onload = function(e) {
                 var data = new Uint8Array(e.target.result);
                 var workbook = XLSX.read(data, {type: 'array'});
+                alert('happened!');
 
                 /* DO SOMETHING WITH workbook HERE */
             };
             reader.readAsArrayBuffer(f);
         }
-        input_dom_element.addEventListener('testfile', handleFile, false);
+        testfile.addEventListener('change', handleFile, false);
   </script>
   
 
