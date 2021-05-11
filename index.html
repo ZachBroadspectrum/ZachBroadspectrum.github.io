@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+    <script lang="javascript" src="dist/xlsx.full.min.js"></script>
     <style>
         .button {
           background-color: #4CAF50; /* Green */
@@ -20,6 +21,10 @@
           color: black; 
           border: 2px solid #4CAF50;
         }
+        .button1:hover {
+        background-color: #4CAF50;
+        color: white;
+        }
     </style>
 <body>
 
@@ -32,11 +37,25 @@
   <p>...After the script.</p>
   <button class="button button1">Green</button>
   <input type="button" class="button" id="ButtonInput" value="Input Button">
+  <input type="file" name='test' id="testfile" value="Input Button">
   <script>
         ButtonInput.onclick = function() {
         alert('Click!');
         };
+        function handleFile(e) {
+            var files = e.target.files, f = files[0];
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var data = new Uint8Array(e.target.result);
+                var workbook = XLSX.read(data, {type: 'array'});
+
+                /* DO SOMETHING WITH workbook HERE */
+            };
+            reader.readAsArrayBuffer(f);
+        }
+        input_dom_element.addEventListener('testfile', handleFile, false);
   </script>
+  
 
 </body>
 
