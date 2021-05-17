@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+    
+    <head>
+        <link rel="stylesheet" href="css/employees.css">
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+        <script type = "text/javascript" src="js/employees.js"></script> 
+        <script lang="javascript" src="node_modules\xlsx\dist\xlsx.full.min.js"></script> 
+        <script lang="javascript" src="https://cdn.jsdelivr.net/npm/underscore@1.13.1/underscore-umd-min.js"></script> 
+        <script defer  src='node_modules\@fortawesome\fontawesome-free\js\all.js'></script>
+    </head>
+    <body>
+        <div class="div header">
+            <div class="imgcontainer">
+                <img src="img_avatar2.png" alt="Avatar" class="avatar">
+            </div>
+            <button class="button">Green</button>
+            <button class="button button1"><i class="fa fa-home"></i></button>
+            <input type="file" class="button button1" name='test' id="testfile" value="Input Button">
+        </div>
+        <div class='Selector'>
+            <div class="fa-4x" id='iconList'></div>
+        </div>
+        <div id="htmlout">
+        </div>
+        <pre id="out">
+        </pre>
+    </body>
+    <script>
+        testfile.addEventListener('change', handleFile, false);
+    </script>
+</html>
